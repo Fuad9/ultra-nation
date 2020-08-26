@@ -1,0 +1,18 @@
+.country-info {
+  border: 1px solid red;
+  color: blue;
+}
+
+.country-info img {
+  width: 200px;
+  height: 100px;
+}
+
+.country-info button {
+  width: 200px;
+  height: 30px;
+  background-color: lightcoral;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
