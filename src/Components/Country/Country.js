@@ -1,8 +1,9 @@
 import React from "react";
 import "./Country.css";
+import {Button} from "@material-ui/core";
 
 const Country = (props) => {
-  console.log(props);
+  // console.log(props);
   const {
     name,
     capital,
@@ -14,21 +15,33 @@ const Country = (props) => {
   } = props.country;
 
   return (
-    <div className="country-info">
+    <div className="country-info mb-5">
       <img src={flag} alt="" />
       <h3>Country Name: {name}</h3>
       <h3>Capital Name: {capital}</h3>
       <h3>Population: {population}</h3>
       <h3>Region: {region}</h3>
-      {currencies.map((currency) => (
-        <h3>Currency: {currency.name}</h3>
+      {currencies.map((currency, idx) => (
+        <h3 key={idx}>Currency: {currency.name}</h3>
       ))}
       {languages.map((language) => (
         <h3>language: {language.name}</h3>
       ))}
-      <button onClick={() => props.handleAddCountry(props.country)}>
+      <Button
+        vaiant="contained"
+        color="primary"
+        onClick={() => {
+          props.handleAddCountry(props.country);
+        }}
+      >
         Add Country
-      </button>
+      </Button>
+      <Button
+        vairant="primary"
+        onClick={() => props.handleDeleteCountry(props.country)}
+      >
+        Remove Country
+      </Button>
     </div>
   );
 };

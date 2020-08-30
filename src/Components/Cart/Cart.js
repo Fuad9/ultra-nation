@@ -1,7 +1,7 @@
 import React from "react";
 
 const Cart = (props) => {
-  console.log(props.cart);
+  // console.log(props.cart);
   const GrossPopulation = props.cart;
   let totalPopulation = 0;
   totalPopulation = GrossPopulation.reduce(
