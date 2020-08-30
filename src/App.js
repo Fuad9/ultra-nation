@@ -14,7 +14,7 @@ function App() {
 
   const [cart, setCart] = useState([]);
 
-  // Adding Item
+  // Adding Item and handling duplicacy
   const handleAddCountry = (country) => {
     const newCountry = [...cart, country];
     setCart(newCountry);

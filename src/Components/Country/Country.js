@@ -1,6 +1,6 @@
 import React from "react";
 import "./Country.css";
-import {Button} from "@material-ui/core";
+import Button from "react-bootstrap/Button";
 
 const Country = (props) => {
   // console.log(props);
@@ -28,8 +28,7 @@ const Country = (props) => {
         <h3>language: {language.name}</h3>
       ))}
       <Button
-        vaiant="contained"
-        color="primary"
+        vaiant="primary"
         onClick={() => {
           props.handleAddCountry(props.country);
         }}
