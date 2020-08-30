@@ -14,15 +14,23 @@ function App() {
 
   const [cart, setCart] = useState([]);
 
-  // Adding Item and handling duplicacy
+  // Adding Item and handling duplicate add
+  // const handleAddCountry = (country) => {
+  //   const newCountry = [...cart, country];
+  //   setCart(newCountry);
+  //   cart.find((item) =>
+  //     item.numericCode === country.numericCode
+  //       ? window.alert("You have already added this country")
+  //       : setCart(newCountry)
+  //   );
+  // };
+
   const handleAddCountry = (country) => {
-    const newCountry = [...cart, country];
-    setCart(newCountry);
-    cart.find((item) =>
-      item.numericCode === country.numericCode
-        ? window.alert("You have already added this country")
-        : setCart(newCountry)
-    );
+    if (cart.some((item) => item.numericCode === country.numericCode)) {
+      window.alert("You have already added this country");
+      return;
+    }
+    setCart([...cart, country]);
   };
 
   // // Stop Adding Duplicate Item
